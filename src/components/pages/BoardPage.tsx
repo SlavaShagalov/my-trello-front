@@ -149,9 +149,6 @@ const BoardPage = () => {
             </div>
                 <Drag handleDrop={handleDrop}>
                     {({ activeItem, activeType, isDragging }: { activeItem: any, activeType: any, isDragging: any }) => {
-                        // console.log("activeItem", activeItem);
-                        // console.log("activeType", activeType);
-                        // console.log("isDragging", isDragging);
                         return (
                             <Drag.DropZone className="flex ml-2 overflow-x-scroll h-screen">
                                 {resp?.lists.map((list, listPos) => {

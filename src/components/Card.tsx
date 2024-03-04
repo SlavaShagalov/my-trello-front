@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Modal from './Modal';
 import { Link, useNavigate } from 'react-router-dom';
 
 interface CardProps {

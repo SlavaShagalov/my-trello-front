@@ -34,7 +34,6 @@ const WorkspaceHeader: React.FC<{
     };
 
     return  (
-      // h-screen flex justify-center items-center bg-gray-200
       <div>
         <div className="border-b border-gray-300 my-4"></div>
         <div className="mb-2 flex items-center">

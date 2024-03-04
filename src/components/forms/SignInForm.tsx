@@ -13,12 +13,8 @@ const SignInForm: React.FC = () => {
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    console.log('Username:', username);
-    console.log('Password:', password);
-
     const requestOptions: RequestInit = {
       method: 'POST',
-      // mode: "no-cors",
       credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
@@ -27,7 +23,6 @@ const SignInForm: React.FC = () => {
         "username": username,
         "password": password
       }),
-      // redirect: 'follow'
     };
 
     fetch(API_LOGIN_URL, requestOptions)
@@ -35,16 +30,13 @@ const SignInForm: React.FC = () => {
         console.log("Status:", response.status);
         if (response.status === 200) {
           console.log('Authentication successful');
+          // const from = location.state?.from || '/';
+          // navigate(from);
           navigate('/workspaces');
         } else {
           console.log('Authentication failed');
-          navigate('/signup');
         }
-        return response.json(); // handle user data
-      })
-      .then(result => {
-        console.log(result);
-        console.log('Authentication successful');
+        return response.json();
       })
       .catch(error => {
         console.log('error', error);
