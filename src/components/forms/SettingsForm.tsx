@@ -25,7 +25,7 @@ const SettingsForm: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://127.0.0.1/api/v1/auth/me`, { credentials: 'include' })
+    fetch(`/api/v1/auth/me`, { credentials: 'include' })
       .then(response => {
         console.log("Status:", response.status);
         if (response.status === 200) {
@@ -68,7 +68,7 @@ const SettingsForm: React.FC = () => {
       }),
     };
 
-    fetch(`http://127.0.0.1/api/v1/users/${data.id}`, requestOptions)
+    fetch(`/api/v1/users/${data.id}`, requestOptions)
       .then(response => {
         console.log("Status:", response.status);
         if (response.status === 200) {
@@ -94,7 +94,7 @@ const SettingsForm: React.FC = () => {
       credentials: 'include',
     };
 
-    fetch(`http://127.0.0.1/api/v1/auth/logout`, requestOptions)
+    fetch(`/api/v1/auth/logout`, requestOptions)
       .then(response => {
         console.log("Status:", response.status);
         if (response.status === 204) {
